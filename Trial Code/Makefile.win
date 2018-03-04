@@ -1,0 +1,28 @@
+# Project: Co_Activity2_Supp2
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Co_Activity2_Supp2.o
+LINKOBJ  = Co_Activity2_Supp2.o
+LIBS     = -L"C:/Program Files (x86)/Applications/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Applications/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Applications/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Applications/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Applications/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Applications/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Applications/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Applications/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Applications/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Co_Activity2_Supp2.exe
+CXXFLAGS = $(CXXINCS) -Wall
+CFLAGS   = $(INCS) -Wall
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Co_Activity2_Supp2.o: Co_Activity2_Supp2.c
+	$(CC) -c Co_Activity2_Supp2.c -o Co_Activity2_Supp2.o $(CFLAGS)
